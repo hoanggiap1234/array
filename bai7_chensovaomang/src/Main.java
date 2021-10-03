@@ -41,8 +41,8 @@ public class Main {
             if (x <= a[0]) {
                 vitrichen = 0;
                 break;
-            } else if( x > a[a.length-1]){
-                vitrichen = a.length -1;
+            } else if( x >= a[a.length-1]){
+                vitrichen = a.length ;
                  break;
             } else {
                 for (int k = 1; k < a.length - 1; k++){
@@ -61,11 +61,12 @@ public class Main {
             for (int i = 1; i< temp.length; i ++){
                 temp[i] = a[i-1];
             }
-        } else if( vitrichen == a.length -1){
-            temp[a.length - 1] = x;
-            for (int i = 0; i< (temp.length - 1); i++){
+        } else if( vitrichen == a.length){
+
+            for (int i = 0; i <= (vitrichen- 1); i++){
                 temp[i] = a[i];
             }
+            temp[vitrichen] = x;
         } else {
             for( int i = 0 ; i < temp.length; i ++){
                 while (i < vitrichen){
